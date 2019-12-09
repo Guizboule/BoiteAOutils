@@ -24,6 +24,10 @@
             android:id="@+id/nav_boussole"
             android:icon="@drawable/compass_icon"
             android:title="@string/menu_boussole" />
+        <item
+            android:id="@+id/nav_lampe"
+            android:icon="@drawable/lampe_icon"
+            android:title="@string/menu_lampe" />
     </group>
 
     <item android:title="Communicate">
