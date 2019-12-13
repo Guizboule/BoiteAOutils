@@ -8,7 +8,6 @@ import android.hardware.camera2.CameraManager;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
-
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,6 +15,8 @@ import android.view.ViewGroup;
 import android.widget.CompoundButton;
 import android.widget.Switch;
 import android.widget.Toast;
+
+import androidx.fragment.app.Fragment;
 
 import com.example.boiteaoutils.R;
 
@@ -37,9 +38,6 @@ public class fragment_lampe extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-
-
-
         View view = inflater.inflate(R.layout.fragment_lampe, container, false);
 
         sw = (Switch) view.findViewById(R.id.switchLampe);
@@ -49,7 +47,7 @@ public class fragment_lampe extends Fragment {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
 
                 Log.d("Hello" ," light = " + getContext().getPackageManager().hasSystemFeature(PackageManager.FEATURE_CAMERA_FLASH));
-                Log.d("Hello" ," switch = " + isChecked);
+
                 if (isFlashOn == false){
                     on();
                 }else{

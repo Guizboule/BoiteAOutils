@@ -30,4 +30,6 @@
     <string name="fragment_lampe">Je suis le fragment lampe !</string>
     <string name="menu_lampe">Lampe</string>
     <string name="on_off">On/Off</string>
+    <string name="off">Off</string>
+    <string name="on">On</string>
 </resources>
