@@ -75,9 +75,9 @@ public class Boussole implements SensorEventListener {
                         * event.values[2];//Z
 
                 // mGravity = event.values;
-                Log.i(TAG+" ACCELEROMETER ", Float.toString(mGravity[0]));
-                Log.i(TAG+" ACCELEROMETER ", Float.toString(mGravity[1]));
-                Log.i(TAG+" ACCELEROMETER ", Float.toString(mGravity[2]));
+                Log.i(TAG+" ACCELEROMETER X", Float.toString(mGravity[0]));
+                Log.i(TAG+" ACCELEROMETER Y", Float.toString(mGravity[1]));
+                Log.i(TAG+" ACCELEROMETER Z", Float.toString(mGravity[2]));
             }
 
             if (event.sensor.getType() == Sensor.TYPE_MAGNETIC_FIELD) {
@@ -88,9 +88,9 @@ public class Boussole implements SensorEventListener {
                         * event.values[1];//Y
                 mGeomagnetic[2] = alpha * mGeomagnetic[2] + (1 - alpha)
                         * event.values[2];//Z
-                Log.i(TAG+" Magnetic ", Float.toString(event.values[0]));
-                Log.i(TAG+" Magnetic ", Float.toString(event.values[0]));
-                Log.i(TAG+" Magnetic ", Float.toString(event.values[0]));
+                Log.i(TAG+" Magnetic X", Float.toString(event.values[0]));
+                Log.i(TAG+" Magnetic Y", Float.toString(event.values[1]));
+                Log.i(TAG+" Magnetic Z", Float.toString(event.values[2]));
             }
 
             boolean success = SensorManager.getRotationMatrix(R, I, mGravity,

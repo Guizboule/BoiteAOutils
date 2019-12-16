@@ -32,4 +32,7 @@
     <string name="on_off">On/Off</string>
     <string name="off">Off</string>
     <string name="on">On</string>
+
+    <string name="menu_niveau">Niveau</string>
+    <string name="fragment_niveau">Je suis le fragment niveau</string>
 </resources>

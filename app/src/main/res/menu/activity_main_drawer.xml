@@ -28,6 +28,10 @@
             android:id="@+id/nav_lampe"
             android:icon="@drawable/lampe_icon"
             android:title="@string/menu_lampe" />
+        <item
+            android:id="@+id/nav_niveau"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="@string/menu_niveau" />
     </group>
 
     <item android:title="Communicate">

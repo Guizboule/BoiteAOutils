@@ -21,14 +21,14 @@ import com.example.boiteaoutils.R;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class fragment_lampe extends Fragment {
+public class LampeFragment extends Fragment {
 
     Camera camera = null;
     Switch sw;
     boolean isFlashOn = false;
 
 
-    public fragment_lampe() {
+    public LampeFragment() {
         // Required empty public constructor
     }
 

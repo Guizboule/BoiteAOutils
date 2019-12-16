@@ -42,12 +42,17 @@
         tools:layout="@layout/fragment_send" />
     <fragment
         android:id="@+id/nav_boussole"
-        android:name="com.example.boiteaoutils.ui.boussole.fragment_boussole"
+        android:name="com.example.boiteaoutils.ui.boussole.BoussoleFragment"
         android:label="@string/menu_boussole"
         tools:layout="@layout/fragment_boussole" />
     <fragment
         android:id="@+id/nav_lampe"
-        android:name="com.example.boiteaoutils.ui.lampe.fragment_lampe"
+        android:name="com.example.boiteaoutils.ui.lampe.LampeFragment"
         android:label="@string/menu_lampe"
         tools:layout="@layout/fragment_lampe" />
+    <fragment
+        android:id="@+id/nav_niveau"
+        android:name="com.example.boiteaoutils.ui.niveau.NiveauFragment"
+        android:label="nav_niveau"
+        tools:layout="@layout/fragment_niveau" />
 </navigation>

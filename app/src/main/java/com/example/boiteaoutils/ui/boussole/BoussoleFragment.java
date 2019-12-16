@@ -20,7 +20,7 @@ import com.example.boiteaoutils.R;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class fragment_boussole extends Fragment {
+public class BoussoleFragment extends Fragment {
 
     private static final String TAG = "Hello";
 
@@ -29,7 +29,7 @@ public class fragment_boussole extends Fragment {
     private float currentAzimuth;
     private PointsCardinauxFormat pointsCardinauxFormat;
 
-    public fragment_boussole() {
+    public BoussoleFragment() {
         // Required empty public constructor
     }
 

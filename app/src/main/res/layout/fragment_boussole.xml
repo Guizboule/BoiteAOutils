@@ -8,7 +8,7 @@
     android:paddingLeft="16dp"
     android:paddingRight="16dp"
     android:paddingTop="16dp"
-    tools:context=".ui.boussole.fragment_boussole">
+    tools:context=".ui.boussole.BoussoleFragment">
 
     <ImageView
         android:id="@+id/imageBoussole"
