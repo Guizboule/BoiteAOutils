@@ -9,14 +9,10 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
-import android.text.TextPaint;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.animation.Animation;
-import android.view.animation.Animation.AnimationListener;
-import android.view.animation.TranslateAnimation;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -24,7 +20,6 @@ import android.widget.Toast;
 import com.example.boiteaoutils.R;
 
 import static android.content.Context.SENSOR_SERVICE;
-import static android.util.Half.EPSILON;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -36,21 +31,8 @@ public class NiveauFragment extends Fragment {
     private static final float AXE_Y_ORIGINE = 535;
 
     private SensorManager mSensorManager;
-    private Sensor gyroscopeSensor;
-    private SensorEventListener gyroscopeEventListener;
-
-    private AnimationListener myAnimationListener;
-
-    private Sensor gsensor; //gyro sensor
-    private Sensor msensor;// magnetic sensor
-    private float[] mGravity = new float[3];
-    private float[] mGeomagnetic = new float[3];
-
-    // Create a constant to convert nanoseconds to seconds.
-    private static final float NS2S = 1.0f / 1000000000.0f;
-    private final float[] deltaRotationVector = new float[4];
-    private float timestamp;
-
+    private Sensor accelerometerSensor;
+    private SensorEventListener accelerometerEventListener;
 
     public NiveauFragment() {
         // Required empty public constructor
@@ -64,18 +46,14 @@ public class NiveauFragment extends Fragment {
         View view = (View) inflater.inflate(R.layout.fragment_niveau, container, false);
 
         mSensorManager = (SensorManager) getActivity().getSystemService(SENSOR_SERVICE);
-        gyroscopeSensor = mSensorManager.getDefaultSensor(Sensor.TYPE_GYROSCOPE);
-        gsensor = mSensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
-        msensor = mSensorManager.getDefaultSensor(Sensor.TYPE_MAGNETIC_FIELD);
+        accelerometerSensor = mSensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
 
-
-
-        if (gyroscopeSensor == null){
-            Toast.makeText(getContext(), "The device has no gyroscope", Toast.LENGTH_SHORT).show();
+        if (accelerometerSensor == null){
+            Toast.makeText(getContext(), "La téléphone n'a pas accès à l'accéléromètre", Toast.LENGTH_SHORT).show();
             getActivity().finish();
         }
 
-        gyroscopeEventListener = new SensorEventListener() {
+        accelerometerEventListener = new SensorEventListener() {
             @Override
             public void onSensorChanged(SensorEvent event) {
 
@@ -129,16 +107,13 @@ public class NiveauFragment extends Fragment {
     public void onResume() {
         super.onResume();
         Log.v(TAG, "onResume" );
-        mSensorManager.registerListener(gyroscopeEventListener, gyroscopeSensor, SensorManager.SENSOR_DELAY_NORMAL);
-
-        mSensorManager.registerListener(gyroscopeEventListener,gsensor,SensorManager.SENSOR_DELAY_NORMAL);
-        mSensorManager.registerListener(gyroscopeEventListener,msensor,SensorManager.SENSOR_DELAY_NORMAL);
+        mSensorManager.registerListener(accelerometerEventListener, accelerometerSensor,SensorManager.SENSOR_DELAY_NORMAL);
     }
 
     @Override
     public void onPause() {
         super.onPause();
         Log.v(TAG, "onPause" );
-        mSensorManager.unregisterListener(gyroscopeEventListener);
+        mSensorManager.unregisterListener(accelerometerEventListener);
     }
 }

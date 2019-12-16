@@ -21,8 +21,15 @@ La boîte à outils est un application Android dans laquelle on trouve une multi
 
 ## Techniques
 
-  Sensors accelerometer
-    les trucs que l'on a utilisé dans le projet....
+  Magnetic field sensor
+  Accelerometer sensor
+  SensorEventListener
+  Microphone
+  Interface
+  Handler
+  Thread
+  Lumière de la caméra
+
 
 
 
