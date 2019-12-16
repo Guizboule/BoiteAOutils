@@ -21,6 +21,14 @@
             android:icon="@drawable/ic_menu_manage"
             android:title="@string/menu_tools" />
         <item
+            android:id="@+id/nav_boussole"
+            android:icon="@drawable/compass_icon"
+            android:title="@string/menu_boussole" />
+        <item
+            android:id="@+id/nav_lampe"
+            android:icon="@drawable/lampe_icon"
+            android:title="@string/menu_lampe" />
+        <item
             android:id="@+id/nav_analyseurSon"
             android:icon="@drawable/ic_menu_sound"
             android:title="@string/menu_analyseurSon"/>

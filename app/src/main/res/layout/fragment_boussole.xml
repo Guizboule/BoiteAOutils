@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frameLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="16dp"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:paddingTop="16dp"
+    tools:context=".ui.boussole.fragment_boussole">
+
+    <ImageView
+        android:id="@+id/imageBoussole"
+        android:layout_width="320dp"
+        android:layout_height="320dp"
+        android:layout_centerInParent="true"
+        android:contentDescription="@string/imageboussole"
+        android:src="@drawable/campass_" />
+
+    <TextView
+        android:id="@+id/pointCardinaux"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imageBoussole"
+        android:layout_centerInParent="true"
+        android:textColor="#0a0a02"
+        android:textSize="30dp"
+        android:text="@string/fragment_boussole" />
+
+</RelativeLayout>

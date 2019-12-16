@@ -41,6 +41,16 @@
         android:label="@string/menu_send"
         tools:layout="@layout/fragment_send" />
     <fragment
+        android:id="@+id/nav_boussole"
+        android:name="com.example.boiteaoutils.ui.boussole.fragment_boussole"
+        android:label="@string/menu_boussole"
+        tools:layout="@layout/fragment_boussole" />
+    <fragment
+        android:id="@+id/nav_lampe"
+        android:name="com.example.boiteaoutils.ui.lampe.fragment_lampe"
+        android:label="@string/menu_lampe"
+        tools:layout="@layout/fragment_lampe" />
+    <fragment
         android:id="@+id/nav_analyseurSon"
         android:name="com.example.boiteaoutils.ui.analyseurDeSon.FragmentAnalyseurSon"
         android:label="@string/menu_analyseurSon"
