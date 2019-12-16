@@ -13,11 +13,15 @@ La boîte à outils est un application Android dans laquelle on trouve une multi
 
 * Boussole
 * Lampe torche
+* Analyseur de son
+* Niveau à bulle
 
 ### Les outils à venir
 
-* Analyseur de son
-* Niveau à bulle
+* Calculatrice
+* Convertisseur d'unité
+* Accéléromètre
+
 
 ## Techniques
 
