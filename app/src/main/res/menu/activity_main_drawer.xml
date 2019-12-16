@@ -32,6 +32,10 @@
             android:id="@+id/nav_niveau"
             android:icon="@drawable/ic_menu_manage"
             android:title="@string/menu_niveau" />
+        <item
+            android:id="@+id/nav_analyseurSon"
+            android:icon="@drawable/ic_menu_sound"
+            android:title="@string/menu_analyseurSon"/>
     </group>
 
     <item android:title="Communicate">

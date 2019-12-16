@@ -55,4 +55,9 @@
         android:name="com.example.boiteaoutils.ui.niveau.NiveauFragment"
         android:label="nav_niveau"
         tools:layout="@layout/fragment_niveau" />
+    <fragment
+        android:id="@+id/nav_analyseurSon"
+        android:name="com.example.boiteaoutils.ui.analyseurDeSon.FragmentAnalyseurSon"
+        android:label="@string/menu_analyseurSon"
+        tools:layout="@layout/fragment_analyseur_son" />
 </navigation>
