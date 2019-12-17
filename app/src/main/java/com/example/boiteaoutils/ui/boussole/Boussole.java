@@ -10,7 +10,7 @@ import android.util.Log;
 
 public class Boussole implements SensorEventListener {
 
-    private static final String TAG = "Hello";
+    private static final String TAG = "Boussole";
 
     public interface BoussoleListener {
         void onNewAzimuth(float azimuth);

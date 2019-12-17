@@ -29,12 +29,12 @@
     <string name="southeast">SE</string>
     <string name="southwest">SW</string>
 
-    <string name="fragment_lampe">Je suis le fragment lampe !</string>
     <string name="menu_lampe">Lampe</string>
     <string name="on_off">On/Off</string>
     <string name="off">Off</string>
     <string name="on">On</string>
 
     <string name="menu_niveau">Niveau</string>
-    <string name="fragment_niveau">Je suis le fragment niveau</string>
+    <string name="angleX">Angle X = xx.x°</string>
+    <string name="angleY">Angle Y = xx.x°</string>
 </resources>

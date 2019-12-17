@@ -23,7 +23,7 @@
     <fragment
         android:id="@+id/nav_niveau"
         android:name="com.example.boiteaoutils.ui.niveau.NiveauFragment"
-        android:label="nav_niveau"
+        android:label="@string/menu_niveau"
         tools:layout="@layout/fragment_niveau" />
     <fragment
         android:id="@+id/nav_analyseurSon"

@@ -22,7 +22,7 @@ import com.example.boiteaoutils.R;
  */
 public class BoussoleFragment extends Fragment {
 
-    private static final String TAG = "Hello";
+    private static final String TAG = "BoussoleFragment";
 
     private Boussole boussole;
 

@@ -1,6 +1,7 @@
 package com.example.boiteaoutils.ui.niveau;
 
 
+import android.content.pm.ActivityInfo;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
@@ -26,9 +27,12 @@ import static android.content.Context.SENSOR_SERVICE;
  */
 public class NiveauFragment extends Fragment {
 
-    private static final String TAG = "Niveau";
+    private static final String TAG = "NiveauFragment";
+
     private static final float AXE_X_ORIGINE = 265;
     private static final float AXE_Y_ORIGINE = 535;
+    private static final double PENSANTEUR = 9.81;
+    private static final float ANGLE_DROIT = 90; //Angle à 90°
 
     private SensorManager mSensorManager;
     private Sensor accelerometerSensor;
@@ -37,7 +41,6 @@ public class NiveauFragment extends Fragment {
     public NiveauFragment() {
         // Required empty public constructor
     }
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -59,46 +62,42 @@ public class NiveauFragment extends Fragment {
         accelerometerEventListener = new SensorEventListener() {
             @Override
             public void onSensorChanged(SensorEvent event) {
-
-
                 if (event.sensor.getType() == Sensor.TYPE_ACCELEROMETER) {
 
                     float axisX = event.values[0];
                     float axisY = event.values[1];
                     float axisZ = event.values[2];
 
-                    Log.d(TAG, "Gyroscope X = " + axisX);
-                    Log.d(TAG, "Gyroscope Y = " + axisY);
-                    Log.d(TAG, "Gyroscope Z = " + axisZ);
-
-
-                    TextView textX2 = (TextView) getView().findViewById(R.id.textX2) ;
-                    textX2.setText("ACCELEROMETER X = " + (float)Math.round(axisX * 100) / 100);
-                    TextView textY2 = (TextView) getView().findViewById(R.id.textY2) ;
-                    textY2.setText("ACCELEROMETER Y = " + (float)Math.round(axisY * 100) / 100);
-                    TextView textZ2 = (TextView) getView().findViewById(R.id.textZ2) ;
-                    textZ2.setText("ACCELEROMETER Z = " + (float)Math.round(axisZ * 100) / 100);
-
-
-                    ImageView imageNiveau = (ImageView) getView().findViewById(R.id.imageNiveau);
+                    Log.d(TAG, "X = " + axisX);
+                    Log.d(TAG, "Y = " + axisY);
+                    Log.d(TAG, "Z = " + axisZ);
 
                     float density = getContext().getResources().getDisplayMetrics().density;
+                    float xInDp = AXE_X_ORIGINE + (float)Math.round(axisX * 50 ) / density;
+                    float yInDp = AXE_Y_ORIGINE - (float)Math.round(axisY * 50 ) / density;
 
-                    float xInDp = AXE_X_ORIGINE + (float)Math.round(axisX * 100 ) / density;
-                    float yInDp = AXE_Y_ORIGINE - (float)Math.round(axisY * 100 ) / density;
-
+                    //Animation de l'image en fonction de l'axe X et Y
+                    ImageView imageNiveau = (ImageView) getView().findViewById(R.id.imageNiveau);
                     imageNiveau.setX(xInDp);
                     imageNiveau.setY(yInDp);
 
+
+                    //Calcul des angles selon les axes des X et Y
+                    float angleX = Math.abs(Math.round(((axisX * ANGLE_DROIT) / PENSANTEUR)));
+                    float angleY = Math.abs(Math.round(((axisY * ANGLE_DROIT) / PENSANTEUR)));
+                    Log.d(TAG, "Angle X = " + angleX);
+                    Log.d(TAG, "Angle Y = " + angleY);
+
+                    //Affichage des angles calculés
+                    TextView textAngleX = (TextView) getView().findViewById(R.id.textAngleX) ;
+                    textAngleX.setText("Angle X = " + angleX  + "°");
+                    TextView textAngleY = (TextView) getView().findViewById(R.id.textAngleY) ;
+                    textAngleY.setText("Angle Y = " + angleY  + "°");
                 }
-
-
             }
 
             @Override
             public void onAccuracyChanged(Sensor sensor, int accuracy) {
-
-
             }
         };
 
@@ -111,6 +110,9 @@ public class NiveauFragment extends Fragment {
         super.onResume();
         Log.v(TAG, "onResume" );
         mSensorManager.registerListener(accelerometerEventListener, accelerometerSensor,SensorManager.SENSOR_DELAY_NORMAL);
+
+        //Bloque l'orientation du fragment en mode portrait
+        getActivity().setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
     }
 
     @Override
