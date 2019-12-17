@@ -63,7 +63,7 @@ public class NiveauFragment extends Fragment {
             @Override
             public void onSensorChanged(SensorEvent event) {
                 if (event.sensor.getType() == Sensor.TYPE_ACCELEROMETER) {
-
+                    //Récupération de des axes X, Y et Z
                     float axisX = event.values[0];
                     float axisY = event.values[1];
                     float axisZ = event.values[2];
@@ -71,7 +71,8 @@ public class NiveauFragment extends Fragment {
                     Log.d(TAG, "X = " + axisX);
                     Log.d(TAG, "Y = " + axisY);
                     Log.d(TAG, "Z = " + axisZ);
-
+                    
+                    //Gestion de la position X et Y du cercle
                     float density = getContext().getResources().getDisplayMetrics().density;
                     float xInDp = AXE_X_ORIGINE + (float)Math.round(axisX * 50 ) / density;
                     float yInDp = AXE_Y_ORIGINE - (float)Math.round(axisY * 50 ) / density;
@@ -80,7 +81,6 @@ public class NiveauFragment extends Fragment {
                     ImageView imageNiveau = (ImageView) getView().findViewById(R.id.imageNiveau);
                     imageNiveau.setX(xInDp);
                     imageNiveau.setY(yInDp);
-
 
                     //Calcul des angles selon les axes des X et Y
                     float angleX = Math.abs(Math.round(((axisX * ANGLE_DROIT) / PENSANTEUR)));

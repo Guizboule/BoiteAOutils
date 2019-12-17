@@ -37,4 +37,6 @@
     <string name="menu_niveau">Niveau</string>
     <string name="angleX">Angle X = xx.x°</string>
     <string name="angleY">Angle Y = xx.x°</string>
+    <string name="cercle_anim">Cercle_animé</string>
+    <string name="cercle_d_origine">Cercle_d\'origine</string>
 </resources>

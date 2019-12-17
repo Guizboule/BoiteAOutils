@@ -23,6 +23,8 @@ import com.example.boiteaoutils.R;
  */
 public class LampeFragment extends Fragment {
 
+    private static final String TAG = "LampeFragment";
+
     Camera camera = null;
     Switch sw;
     boolean isFlashOn = false;
@@ -44,7 +46,7 @@ public class LampeFragment extends Fragment {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
 
-                Log.d("Hello" ," light = " + getContext().getPackageManager().hasSystemFeature(PackageManager.FEATURE_CAMERA_FLASH));
+                Log.d( TAG ," light = " + getContext().getPackageManager().hasSystemFeature(PackageManager.FEATURE_CAMERA_FLASH));
 
                 if (isFlashOn == false){
                     on();

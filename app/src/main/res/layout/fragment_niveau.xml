@@ -6,32 +6,12 @@
     android:layout_height="match_parent"
     tools:context=".ui.niveau.NiveauFragment">
 
-    <TextView
-        android:id="@+id/textZ2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="140dp"
-        android:text="Y = xxx" />
-
-    <TextView
-        android:id="@+id/textX2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
-        android:text="X = xxx" />
-
-    <TextView
-        android:id="@+id/textY2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="120dp"
-        android:text="Y = xxx" />
-
     <ImageView
         android:id="@+id/imageNiveau"
         android:layout_width="99dp"
         android:layout_height="103dp"
         android:layout_centerInParent="true"
+        android:contentDescription="@string/cercle_anim"
         android:src="@drawable/rond_noir" />
 
     <ImageView
@@ -39,6 +19,7 @@
         android:layout_width="99dp"
         android:layout_height="103dp"
         android:layout_centerInParent="true"
+        android:contentDescription="@string/cercle_d_origine"
         android:src="@drawable/rond_noir" />
 
     <TextView
@@ -50,7 +31,7 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="50dp"
         android:text="@string/angleX"
-        android:textSize="20dp" />
+        android:textSize="20sp" />
 
     <TextView
         android:id="@+id/textAngleY"
@@ -61,6 +42,6 @@
         android:layout_marginTop="50dp"
         android:layout_marginEnd="20dp"
         android:text="@string/angleY"
-        android:textSize="20dp" />
+        android:textSize="20sp" />
 
 </RelativeLayout>
