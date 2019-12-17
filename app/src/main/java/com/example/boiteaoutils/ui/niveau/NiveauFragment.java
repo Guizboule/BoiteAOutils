@@ -27,7 +27,7 @@ import static android.content.Context.SENSOR_SERVICE;
 public class NiveauFragment extends Fragment {
 
     private static final String TAG = "Niveau";
-    private static final float AXE_X_ORIGINE = 270;
+    private static final float AXE_X_ORIGINE = 265;
     private static final float AXE_Y_ORIGINE = 535;
 
     private SensorManager mSensorManager;
@@ -47,6 +47,9 @@ public class NiveauFragment extends Fragment {
 
         mSensorManager = (SensorManager) getActivity().getSystemService(SENSOR_SERVICE);
         accelerometerSensor = mSensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
+        ImageView imageNiveau = (ImageView) view.findViewById(R.id.imageNiveau);
+        Log.wtf(TAG, "X = " + imageNiveau.getX());
+        Log.wtf(TAG, "Y = " + imageNiveau.getY());
 
         if (accelerometerSensor == null){
             Toast.makeText(getContext(), "La téléphone n'a pas accès à l'accéléromètre", Toast.LENGTH_SHORT).show();
@@ -81,8 +84,8 @@ public class NiveauFragment extends Fragment {
 
                     float density = getContext().getResources().getDisplayMetrics().density;
 
-                    float xInDp = AXE_X_ORIGINE + (float)Math.round(axisX * 100) / density;
-                    float yInDp = AXE_Y_ORIGINE - (float)Math.round(axisY * 100) / density;
+                    float xInDp = AXE_X_ORIGINE + (float)Math.round(axisX) / density;
+                    float yInDp = AXE_Y_ORIGINE - (float)Math.round(axisY) / density;
 
                     imageNiveau.setX(xInDp);
                     imageNiveau.setY(yInDp);

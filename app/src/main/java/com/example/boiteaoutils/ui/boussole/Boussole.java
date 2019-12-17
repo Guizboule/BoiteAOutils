@@ -19,8 +19,8 @@ public class Boussole implements SensorEventListener {
     private BoussoleListener listener;
 
     private SensorManager sensorManager;
-    private Sensor gsensor; //gyro sensor
-    private Sensor msensor;// magnetic sensor
+    private Sensor accelerometerSensor; //accelerometer sensor
+    private Sensor magneticSensor;// magnetic sensor
 
     private float[] mGravity = new float[3];
     private float[] mGeomagnetic = new float[3];
@@ -31,16 +31,15 @@ public class Boussole implements SensorEventListener {
     private float azimuthFix;
 
     public Boussole(Context context) {
-        sensorManager = (SensorManager) context
-                .getSystemService(Context.SENSOR_SERVICE); //Activate the sonsor service//If sensor sensor service is
+        sensorManager = (SensorManager) context.getSystemService(Context.SENSOR_SERVICE);
 
-        gsensor = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
-        msensor = sensorManager.getDefaultSensor(Sensor.TYPE_MAGNETIC_FIELD);
+        accelerometerSensor = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
+        magneticSensor = sensorManager.getDefaultSensor(Sensor.TYPE_MAGNETIC_FIELD);
     }
 
     public void start() {
-        sensorManager.registerListener(this, gsensor,SensorManager.SENSOR_DELAY_GAME);
-        sensorManager.registerListener(this, msensor, SensorManager.SENSOR_DELAY_GAME);
+        sensorManager.registerListener(this, accelerometerSensor,SensorManager.SENSOR_DELAY_GAME);
+        sensorManager.registerListener(this, magneticSensor, SensorManager.SENSOR_DELAY_GAME);
     }
 
     public void stop() {
