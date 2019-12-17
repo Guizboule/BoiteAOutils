@@ -84,8 +84,8 @@ public class NiveauFragment extends Fragment {
 
                     float density = getContext().getResources().getDisplayMetrics().density;
 
-                    float xInDp = AXE_X_ORIGINE + (float)Math.round(axisX) / density;
-                    float yInDp = AXE_Y_ORIGINE - (float)Math.round(axisY) / density;
+                    float xInDp = AXE_X_ORIGINE + (float)Math.round(axisX * 100 ) / density;
+                    float yInDp = AXE_Y_ORIGINE - (float)Math.round(axisY * 100 ) / density;
 
                     imageNiveau.setX(xInDp);
                     imageNiveau.setY(yInDp);
