@@ -71,7 +71,7 @@ public class NiveauFragment extends Fragment {
                     Log.d(TAG, "X = " + axisX);
                     Log.d(TAG, "Y = " + axisY);
                     Log.d(TAG, "Z = " + axisZ);
-                    
+
                     //Gestion de la position X et Y du cercle
                     float density = getContext().getResources().getDisplayMetrics().density;
                     float xInDp = AXE_X_ORIGINE + (float)Math.round(axisX * 50 ) / density;
